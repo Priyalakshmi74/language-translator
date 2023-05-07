@@ -1,11 +1,10 @@
-import './App.css';
-import Form from './components/Form';
+import MyTranslator from './components/MyTranslator';
 
 
 function App() {
   return (
-    <div className="App">
-      <Form/>
+    <div className="App" >
+      <MyTranslator/>
     </div>
   );
 }
