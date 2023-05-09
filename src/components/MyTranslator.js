@@ -99,11 +99,10 @@ function MyTranslator() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        padding: "2rem"
-        
+        padding: "2rem",
       }}
     >
-      <h1 style={{ color: "#fff", marginBottom: "2rem",marginTop:"2px" }}>
+      <h1 style={{ color: "#fff", marginBottom: "2rem", marginTop: "2px" }}>
         Language Translator
       </h1>
       {/* <div style={{ marginLeft: "70px", marginTop: "30px" }}> */}
@@ -115,48 +114,99 @@ function MyTranslator() {
         onChange={handleTargetLanguageChange}
       />
       <br />
+      <div style={{ position: "relative" }}>
       <textarea
-        rows="10"
-        cols="50"
-        value={inputText}
-        onChange={handleInputChange}
-        // style={{ marginTop: "30px" }}
-        style={{
-          backgroundColor: "#424242",
-          color: "#fff",
-          width: "100%",
-          marginRight: "1rem",
-          padding: "1rem",
-          borderRadius: "0.5rem",
-          border: "none",
-          outline: "none",
-          resize: "none",
-          height: "10rem",
-        }}
-      />
+  placeholder="Enter text.."
+  rows="10"
+  cols="50"
+  value={inputText}
+  onChange={handleInputChange}
+  style={{
+    backgroundColor: "#202124",
+    color: "#fff",
+    width: "100%",
+    cursor: "pointer",
+    marginRight: "1rem",
+    marginLeft: "1rem",
+    padding: "1rem",
+    borderRadius: "1rem",
+    border: "none",
+    outline: "none",
+    resize: "none",
+    height: "10rem",
+    width: "50rem"
+  }}
+>
+  {inputText && (
+    <button
+      style={{
+        position: "absolute",
+        top: "0",
+        right: "18px",
+        cursor: "pointer",
+        border: "none",
+        background: "transparent",
+        color: "white",
+        fontSize: "30px",
+        zIndex: "10" // Increase the z-index value to make sure it appears on top
+      }}
+      onClick={() => setInputText("")}
+    >
+      &times;
+    </button>
+  )}
+</textarea>
+
+</div>
       <br />
       <button onClick={handleTranslate}>Translate</button>
       <br />
-      <textarea
-        rows="10"
-        cols="50"
-        value={outputText}
-        style={{
-          backgroundColor: "#424242",
-          color: "#fff",
-          width: "100%",
-          marginLeft: "1rem",
-          padding: "1rem",
-          borderRadius: "0.5rem",
-          border: "none",
-          outline: "none",
-          resize: "none",
-          height: "10rem",
-        }}
-        readOnly
-      />
+      <div style={{ position: "relative" }}>
+        <textarea
+          placeholder="Translation.."
+          rows="10"
+          cols="50"
+          value={outputText}
+          style={{
+            backgroundColor: "#424242",
+            color: "#fff",
+            width: "100%",
+            marginLeft: "1rem",
+            marginRight: "1rem",
+            padding: "1rem",
+            borderRadius: "1rem",
+            border: "none",
+            outline: "none",
+            resize: "none",
+            height: "10rem",
+            width: "50rem",
+            
+          }}
+          readOnly
+        />
+        {outputText && (
+          <button
+            style={{
+              position: "absolute",
+              top: "0",
+              right: "18px",
+              cursor: "pointer",
+              border: "none",
+              background: "transparent",
+              color: "white",
+              fontSize: "30px",
+              zIndex: "1",
+            }}
+            onClick={() => setOutputText("")}
+          >
+            &times;
+          </button>
+        )}
+      </div>
     </div>
   );
 }
 
 export default MyTranslator;
+
+// last worked on cross,further need to chnage the cross Symbol
