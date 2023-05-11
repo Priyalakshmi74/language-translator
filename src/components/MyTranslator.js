@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Select from "react-select";
 import gptCall from "../client/gpt";
+import { ReactComponent as ReactLogo } from "./undraw_chat_re_re1u.svg";
 
 const options = [
   { value: "af", label: "Afrikaans" },
@@ -93,7 +94,6 @@ function MyTranslator() {
     <div
       className="App"
       style={{
-        backgroundColor: "#202124",
         minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
@@ -102,11 +102,20 @@ function MyTranslator() {
         padding: "2rem",
       }}
     >
+      <div
+        style={{
+          marginBottom: "3rem",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          marginRight: "20PX",
+        }}
+      >
+        <ReactLogo />
+      </div>
       <h1 style={{ color: "#fff", marginBottom: "2rem", marginTop: "2px" }}>
         Language Translator
       </h1>
-      {/* <div style={{ marginLeft: "70px", marginTop: "30px" }}> */}
-
       <Select
         placeholder="Select target language"
         options={options}
@@ -115,49 +124,47 @@ function MyTranslator() {
       />
       <br />
       <div style={{ position: "relative" }}>
-      <textarea
-  placeholder="Enter text.."
-  rows="10"
-  cols="50"
-  value={inputText}
-  onChange={handleInputChange}
-  style={{
-    backgroundColor: "#202124",
-    color: "#fff",
-    width: "100%",
-    cursor: "pointer",
-    marginRight: "1rem",
-    marginLeft: "1rem",
-    padding: "1rem",
-    borderRadius: "1rem",
-    border: "none",
-    outline: "none",
-    resize: "none",
-    height: "10rem",
-    width: "50rem"
-  }}
->
-  {inputText && (
-    <button
-      style={{
-        position: "absolute",
-        top: "0",
-        right: "18px",
-        cursor: "pointer",
-        border: "none",
-        background: "transparent",
-        color: "white",
-        fontSize: "30px",
-        zIndex: "10" // Increase the z-index value to make sure it appears on top
-      }}
-      onClick={() => setInputText("")}
-    >
-      &times;
-    </button>
-  )}
-</textarea>
-
-</div>
+        <textarea
+          placeholder="Enter text.."
+          rows="10"
+          cols="50"
+          value={inputText}
+          onChange={handleInputChange}
+          style={{
+            backgroundColor: "#edeff5",
+            color: "#000",
+            width: "100%",
+            marginRight: "1rem",
+            marginLeft: "1rem",
+            padding: "1rem",
+            borderRadius: "1rem",
+            border: "none",
+            outline: "none",
+            resize: "none",
+            height: "10rem",
+            width: "50rem",
+          }}
+        >
+          {inputText && (
+            <button
+              style={{
+                position: "absolute",
+                top: "0",
+                // right: "18px",
+                cursor: "pointer",
+                border: "none",
+                background: "transparent",
+                color: "black",
+                fontSize: "300px",
+                zIndex: "1", // Increase the z-index value to make sure it appears on top
+              }}
+              onClick={() => setInputText("")}
+            >
+              &times;
+            </button>
+          )}
+        </textarea>
+      </div>
       <br />
       <button onClick={handleTranslate}>Translate</button>
       <br />
@@ -168,8 +175,8 @@ function MyTranslator() {
           cols="50"
           value={outputText}
           style={{
-            backgroundColor: "#424242",
-            color: "#fff",
+            backgroundColor: "#edeff5",
+            color: "#000",
             width: "100%",
             marginLeft: "1rem",
             marginRight: "1rem",
@@ -180,7 +187,6 @@ function MyTranslator() {
             resize: "none",
             height: "10rem",
             width: "50rem",
-            
           }}
           readOnly
         />
@@ -193,7 +199,7 @@ function MyTranslator() {
               cursor: "pointer",
               border: "none",
               background: "transparent",
-              color: "white",
+              color: "black",
               fontSize: "30px",
               zIndex: "1",
             }}
@@ -208,5 +214,3 @@ function MyTranslator() {
 }
 
 export default MyTranslator;
-
-// last worked on cross,further need to chnage the cross Symbol
