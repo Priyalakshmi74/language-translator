@@ -94,7 +94,7 @@ function MyTranslator() {
     <div
       className="App"
       style={{
-        minHeight: "100vh",
+        minHeight: "60vh",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -102,18 +102,8 @@ function MyTranslator() {
         padding: "2rem",
       }}
     >
-      <div
-        style={{
-          marginBottom: "3rem",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          marginRight: "20PX",
-        }}
-      >
-        <ReactLogo />
-      </div>
-      <h1 style={{ color: "#fff", marginBottom: "2rem", marginTop: "2px" }}>
+      
+      <h1 style={{ color: "#f286bb", marginBottom: "2rem", marginTop: "2px" }}>
         Language Translator
       </h1>
       <Select
@@ -166,7 +156,7 @@ function MyTranslator() {
         </textarea>
       </div>
       <br />
-      <button onClick={handleTranslate}>Translate</button>
+      <button style={{ backgroundColor: "#47A1ADCC", paddingLeft:'20px',paddingRight:'20px',paddingTop:'0.5rem',paddingBottom:'0.5rem',borderRadius:'0.5rem'}} onClick={handleTranslate}>Translate</button>
       <br />
       <div style={{ position: "relative" }}>
         <textarea
